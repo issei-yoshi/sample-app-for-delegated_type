@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_24_043900) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_24_044545) do
+  create_table "call_events", force: :cascade do |t|
+    t.string "phone_number", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "contact_activities", force: :cascade do |t|
     t.string "activityable_type", null: false
     t.integer "activityable_id", null: false
