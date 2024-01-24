@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_24_044545) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_24_044744) do
   create_table "call_events", force: :cascade do |t|
     t.string "phone_number", null: false
     t.datetime "created_at", null: false
@@ -23,6 +23,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_044545) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["activityable_type", "activityable_id"], name: "index_contact_activities_on_activityable"
+  end
+
+  create_table "mail_events", force: :cascade do |t|
+    t.text "to", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

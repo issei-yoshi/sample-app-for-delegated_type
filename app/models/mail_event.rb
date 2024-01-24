@@ -1,0 +1,2 @@
+class MailEvent < ApplicationRecord
+end
