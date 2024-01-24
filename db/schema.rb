@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_24_044744) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_24_044933) do
+  create_table "assignee_change_events", force: :cascade do |t|
+    t.string "before_assignee"
+    t.string "after_assignee", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "call_events", force: :cascade do |t|
     t.string "phone_number", null: false
     t.datetime "created_at", null: false
